@@ -14,7 +14,7 @@ for(i in 1:13) {
   colnames(dat_combine[[i]])[colnames(dat_combine[[i]]) == "p"] <- per_name[i]
   dat_combine[[i]] <- reshape2::melt(dat_combine[[i]], id.vars = c(1:9, 11), measure.vars = 10,
                                      variable.name = "name",
-                                     value.na,e = "count")
+                                     value.name = "count")
 }
 
 elec <- data.frame(data.table::rbindlist(dat_combine)) # dim : 288782 * 12
